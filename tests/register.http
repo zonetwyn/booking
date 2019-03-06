@@ -3,9 +3,9 @@ Content-Type: application/json
 
 {
     "type": "driver",
-    "email": "awesome@awesome.com",
+    "email": "zonetwyn@gmail.com",
     "password": "awesome",
-    "name": "Awesome Awesome",
-    "phone": "+123456789",
+    "name": "Wilfried Noel",
+    "phone": "+987654321",
     "pictureUrl": "http://res.cloudinary.com/booking-19/image/upload/v1551741661/users/b5tmxgjkzqylp5qhk2xp.jpg"
 }

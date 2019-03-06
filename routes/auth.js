@@ -54,11 +54,27 @@ router.post('/register', async (req, res, next) => {
         });
     
         await user.save();
-        cons();
-
-        return res.status(201).json({
-            message: 'Your account has been successfully created'
+        cons('registration.ejs', { name: body.name }).then(html => {
+            mailer(body.email, 'Account Confirmation', html).then(() => {
+                return res.status(201).json({
+                    message: 'Your account has been successfully created'
+                })
+            }).catch(error => {
+                console.log('----->sending');
+                console.log(error)
+                return res.status(500).json({
+                    error: 'Error'
+                });
+            });
+        }).catch(error => {
+            console.log('----->templating');
+            console.log(error)
+            return res.status(500).json({
+                error: 'Error'
+            });
         })
+
+        
     } catch (error) {
         if (error.isJoi) {
             return res.status(400).json(error.details);

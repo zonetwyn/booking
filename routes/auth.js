@@ -58,7 +58,7 @@ router.post('/register', async (req, res, next) => {
             mailer(body.email, 'Account Confirmation', html).then(() => {
                 return res.status(201).json({
                     message: 'Your account has been successfully created'
-                })
+                });
             }).catch(error => {
                 console.log('----->sending');
                 console.log(error)
@@ -72,7 +72,7 @@ router.post('/register', async (req, res, next) => {
             return res.status(500).json({
                 error: 'Error'
             });
-        })
+        });
 
         
     } catch (error) {

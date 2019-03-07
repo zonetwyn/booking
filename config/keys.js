@@ -21,5 +21,10 @@ module.exports = {
     mailer: {
         email: 'zonetwyn.booking19@gmail.com',
         password: 'Gmail.book@.2019'
+    },
+    twilio: {
+        sid: 'AC68c58404e49c21830bc6d9162ac4654b',
+        token: '83b27aa5566e1c70fbb2a7d54950260e',
+        phone: '+13215170934'
     }
 }

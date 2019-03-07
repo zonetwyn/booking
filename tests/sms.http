@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/sms/send
+Content-Type: application/json
+
+{
+    "body": "Just be awesome",
+    "to": "+33766811008"
+}

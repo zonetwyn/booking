@@ -15,6 +15,7 @@ const keys = require('./config/keys');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const uploadRoutes = require('./routes/upload');
+const smsRoutes = require('./routes/sms');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -35,7 +36,8 @@ mongoose
 
 app.use(API_PREFIX + 'auth', authRoutes);
 app.use(API_PREFIX + 'users', passport.authenticate('jwt', { session: false }), userRoutes);
-app.use(API_PREFIX + 'files', uploadRoutes);      
+app.use(API_PREFIX + 'files', uploadRoutes);  
+app.use(API_PREFIX + 'sms', smsRoutes);       
 
 const port = process.env.PORT || 5000;
 

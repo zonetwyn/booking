@@ -10,8 +10,12 @@ const authorize = (roles = []) => {
             } else {
                 return res.status(401).json({
                     error: 'Your are not authorized to access this resource'
-                })
+                });
             }
+        } else {
+            return res.status(401).json({
+                error: 'Your are not authorized to access this resource'
+            });
         }
     }
 };
